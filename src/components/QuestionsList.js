@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {bindActionCreators} from "redux";
 import {connect} from 'react-redux';
+import {checkAnswer, changeInput} from '../actions/index';
 
 class QuestionsList extends Component {
     showList() {
@@ -9,14 +10,13 @@ class QuestionsList extends Component {
                 <div key={question.id} className='questionBlock'>
                     <span>{question.question}</span>
                     <input type="text" placeholder='Введите ваш ответ'/>
-                    <button>Проверить</button>
+                    <button onClick={() => this.props.checkAnswer(question)}>Проверить</button>
                 </div>
             )
         })
     }
 
     render() {
-
         return (
             <div>
                 {this.showList()}
@@ -31,4 +31,15 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(QuestionsList);
+function matchDispatchToProps (dispatch) {
+    return bindActionCreators({
+        checkAnswer: checkAnswer,
+        changeInput: changeInput
+    }, dispatch);
+}
+
+function onCheckAnswer(action) {
+
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(QuestionsList);

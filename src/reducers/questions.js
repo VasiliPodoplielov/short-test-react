@@ -3,22 +3,26 @@ export default function() {
         {
             id: 1,
             question: 'Какого цвета трава?',
-            answer: 'Зеленого'
+            answer: 'Зеленого',
+            userAnswer: ''
         },
         {
             id: 2,
             question: 'Что делают из муки?',
-            answer: 'Хлеб'
+            answer: 'Хлеб',
+            userAnswer: ''
         },
         {
             id: 3,
             question: 'На чем ты сидишь?',
-            answer: 'На стуле'
+            answer: 'На стуле',
+            userAnswer: ''
         },
         {
             id: 4,
             question: 'Как называется звезда планеты Земля?',
-            answer: 'Солнце'
+            answer: 'Солнце',
+            userAnswer: ''
         }
     ]
 }
